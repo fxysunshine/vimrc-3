@@ -335,6 +335,7 @@ imap <silent> <F9> <Plug>MarkdownPreview
 " syntastic
 "================================
 let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_wq = 0
 
 nmap <silent> <F12> :terminal<CR>
 imap <silent> <F12> <esc>:terminal<CR>
