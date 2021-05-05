@@ -36,6 +36,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'brtastic/vim-jsonviewer'
+Plugin 'iamcco/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,9 +48,14 @@ let g:go_version_warning = 0
 
 set history=1000
 "set cursorline
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 "set paste
+
+"set mouse in normal mode
+"mount=a/n/v/i/c and nil
+"set mouse=n
 
 set splitbelow
 set splitright
@@ -314,3 +320,21 @@ let g:which_key_map.l = {
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+
+"================================
+" markdown preview
+"================================
+
+" for normal mode
+nmap <silent> <F9> <Plug>MarkdownPreview
+" for insert mode
+imap <silent> <F9> <Plug>MarkdownPreview
+
+
+"================================
+" syntastic
+"================================
+let g:syntastic_auto_loc_list = 0
+
+nmap <silent> <F12> :terminal<CR>
+imap <silent> <F12> <esc>:terminal<CR>
