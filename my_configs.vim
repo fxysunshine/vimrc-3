@@ -28,7 +28,7 @@ Plugin 'Yggdroot/LeaderF'
 Plugin 'simplyzhao/cscope_maps.vim'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'fxysunshine/mark.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'fatih/vim-go', { 'tag': '*'  }
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -51,8 +51,11 @@ set history=1000
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-"set paste
 
+"set autoindent
+set smartindent
+
+"set paste
 "set mouse in normal mode
 "mount=a/n/v/i/c and nil
 "set mouse=n
@@ -213,11 +216,27 @@ let g:ale_linters = {
 let g:loaded_comfortable_motion = 0
 
 """"""""""""""""""""""""""""""
-" ycm & UltiSnips
+" YCM & UltiSnips
 """"""""""""""""""""""""""""""
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 let g:UltiSnipsExpandTrigger="<tab>"
+
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim_runtime/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+
+" 代码提示框的高亮配置
+highlight PMenu ctermbg=red ctermfg=15
+highlight PMenuSel ctermbg=14 ctermfg=16
+
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+
+" jumplist: Ctrl+O/Ctrl+I
+nmap <C-\>\ :YcmCompleter GoToDefinition<CR>
+"nmap <C-\>[ :YcmCompleter GoToDeclaration<CR>
+"nmap <C-\>] :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <F3> :YcmDiags<CR>
 
 """"""""""""""""""""""""""""""
 " fzf
@@ -339,3 +358,16 @@ let g:syntastic_check_on_wq = 0
 
 nmap <silent> <F12> :terminal<CR>
 imap <silent> <F12> <esc>:terminal<CR>
+
+nmap <silent> <C-w>= :resize +5<CR>
+nmap <silent> <C-w>- :resize -5<CR>
+nmap <silent> <C-w>, :vertical resize -5<CR>
+
+"================================
+" tools
+"================================
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {<CR>}<ESC>O
