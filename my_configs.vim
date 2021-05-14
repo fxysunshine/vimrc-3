@@ -224,6 +224,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim_runtime/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_seed_identifiers_with_syntax = 1   "c/c++关键字自动补全"
 
 " 代码提示框的高亮配置
 highlight PMenu ctermbg=red ctermfg=15
@@ -233,7 +234,8 @@ let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
 
 " jumplist: Ctrl+O/Ctrl+I
-nmap <C-\>\ :YcmCompleter GoToDefinition<CR>
+nmap <C-\>\ :YcmCompleter GoTo<CR>
+"nmap <C-\>\ :YcmCompleter GoToDefinition<CR>
 "nmap <C-\>[ :YcmCompleter GoToDeclaration<CR>
 "nmap <C-\>] :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <F3> :YcmDiags<CR>
