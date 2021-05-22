@@ -25,7 +25,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'mbbill/undotree'
 Plugin 'fxysunshine/taglist.vim'
 Plugin 'Yggdroot/LeaderF'
-Plugin 'simplyzhao/cscope_maps.vim'
+Plugin 'fxysunshine/cscope_maps.vim'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'fxysunshine/mark.vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -235,6 +235,7 @@ let g:ycm_warning_symbol = '>*'
 
 " jumplist: Ctrl+O/Ctrl+I
 nmap <C-\>\ :YcmCompleter GoTo<CR>
+nmap <C-\><C-\> :YcmCompleter GoTo<CR>
 "nmap <C-\>\ :YcmCompleter GoToDefinition<CR>
 "nmap <C-\>[ :YcmCompleter GoToDeclaration<CR>
 "nmap <C-\>] :YcmCompleter GoToDefinitionElseDeclaration<CR>
